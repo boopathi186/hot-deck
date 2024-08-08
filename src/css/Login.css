@@ -1,0 +1,15 @@
+span.eye
+{
+    position: absolute;
+    top: 40px;
+    right: 10px;
+    cursor: pointer;
+}
+.input :focus
+{
+   outline: none;
+}
+.loginbutton
+{
+    background-color: #d51b0c;
+}
