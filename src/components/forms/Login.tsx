@@ -30,13 +30,13 @@ const Login: React.FC = () => {
 
     const handleSubmit = async (values: Credentials) => {
         try {
-            const response = await axios.post('https://api.escuelajs.co/api/v1/auth/login', {
+            const response = await axios.post('https://dev-api.urlane.com/admin/login', {
                 email: values.email,
                 password: values.password,
             });
 
-            if (response.data.access_token) {
-                sessionStorage.setItem('token', response.data.access_token);
+            if (response?.data?.tokens?.access?.token) {
+                sessionStorage.setItem('token', response?.data?.tokens?.access?.token);
                 console.log(response);
                 
                 navigate('/dashboard');

@@ -2,9 +2,9 @@
 {
     background-color: #d51b0c;
 } 
-.userprofile
+body
 {
-    background:#fafcfb;
+    background-color: rgb(250, 252, 251) !important;
 }
 .card  {
    

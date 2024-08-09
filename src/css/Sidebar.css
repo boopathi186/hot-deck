@@ -2,3 +2,12 @@ div.sidebar :hover
 {
     background-color: rgb(243, 243, 243);
 }
+
+.nav-link {
+    color: rgba(108, 117, 125, 0.5); 
+  }
+
+.nav-link.active {
+    color: #dc3545; 
+  }
+  
