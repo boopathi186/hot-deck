@@ -30,11 +30,6 @@ const Dashboard = () => {
                     <Container fluid>
                     <Row className="d-flex  m-0 mt-4 p-0">
                         <Col md={6} sm={12} className="fw-semibold mb-4 fs-4 text-md-start text-center">Dashboard</Col>
-                            <Col md={6} sm={12} className="userprofile mt-3 rounded-2 fs-5 fw-semibold text-md-end text-center">
-                                <Link className='text-decoration-none text-white' to="/dashboard/userProfile">
-                                   <span className="userProfiles  shadow-sm p-3 rounded"> <i className="bi bi-person-fill"></i>  User Profiles </span>
-                                </Link>
-                            </Col>
                         </Row>
                         <Row className=" row-cols-1  row-cols-md-2 row-cols-xl-4 g-4 mt-3">
                             

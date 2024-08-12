@@ -5,7 +5,7 @@ div.t1
 }
 .edit
 {
-    color: rgb(42, 235, 235);
+    color: rgb(5, 130, 214);
 }
 .search
 {
@@ -21,4 +21,14 @@ button.createButton
 {
     background-color: #d51b0c;
     color: rgb(248, 248, 248);
+}
+small.active{
+    background-color: #d7ffd9 !important;
+    color: #14c532;
+    font-weight: bold;
+}
+small.inactive{
+    background-color:#fbe9e7 !important;
+    color: #ff1909;
+    font-weight: bold;
 }

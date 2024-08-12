@@ -1,0 +1,130 @@
+{
+    "data": {
+        "totalCount": 17,
+        "items": [
+            {
+                "themeId": "e7e63781-f030-4fd3-a353-5d798f713db7",
+                "displayId": "T017",
+                "title": "WildMut Theme",
+                "subtitle": "Cartoon Theme",
+                "description": "This is an animal alien in Ben10",
+                "noOfDeck": "0",
+                "coverImageUrl": "https://hotdeckdevacc.blob.core.windows.net/hotdeckdevcontainer/themes/wildmutt.png?sv=2023-11-03&se=2024-08-10T06%3A46%3A51Z&sr=b&sp=r&sig=YJEa5kVQxBILDaelStlLjuZlB0nl3iXi0%2FKRskNahBs%3D",
+                "status": 1,
+                "createdAt": "2024-08-08T14:08:19.759Z",
+                "coverImageFileName": "wildmutt.png"
+            },
+            {
+                "themeId": "95202877-1c95-4b24-ae0e-34cea28504c3",
+                "displayId": "T016",
+                "title": "Rath Theme",
+                "subtitle": "Cartoon ALien",
+                "description": "This Alien is very angry in Ben10",
+                "noOfDeck": "0",
+                "coverImageUrl": "https://hotdeckdevacc.blob.core.windows.net/hotdeckdevcontainer/themes/rath.png?sv=2023-11-03&se=2024-08-10T06%3A46%3A51Z&sr=b&sp=r&sig=H9%2BO1Ddighy9DSL4ANLVvOmuN%2BRuxvKEN3n%2FXoKvtvk%3D",
+                "status": 1,
+                "createdAt": "2024-08-08T13:50:35.383Z",
+                "coverImageFileName": "rath.png"
+            },
+            {
+                "themeId": "f5a189b6-e41a-43c0-b354-3a934ead65fa",
+                "displayId": "T015",
+                "title": "DPTEST",
+                "subtitle": "test",
+                "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It h",
+                "noOfDeck": "9",
+                "coverImageUrl": "https://hotdeckdevacc.blob.core.windows.net/hotdeckdevcontainer/themes/taj.jpeg?sv=2023-11-03&se=2024-08-10T06%3A46%3A51Z&sr=b&sp=r&sig=QklVK3My451r09mZdyD5Hxv6CEWpcrlUb6oD3ReEzR0%3D",
+                "status": 1,
+                "createdAt": "2024-08-07T08:33:42.135Z",
+                "coverImageFileName": "taj.jpeg"
+            },
+            {
+                "themeId": "73ee148e-f477-48c8-8aaf-7d38c75f3f40",
+                "displayId": "T014",
+                "title": "Tiger India",
+                "subtitle": "Tiger India",
+                "description": "Tiger in indian forest",
+                "noOfDeck": "0",
+                "coverImageUrl": "https://hotdeckdevacc.blob.core.windows.net/hotdeckdevcontainer/themes/images%20(5)%20(1).jpeg?sv=2023-11-03&se=2024-08-10T06%3A46%3A51Z&sr=b&sp=r&sig=Qgx4PZF5ca33rG5NtofpUaS1yUTV6fbVFEWiTpYN0Tg%3D",
+                "status": 1,
+                "createdAt": "2024-08-06T06:46:26.159Z",
+                "coverImageFileName": "images (5) (1).jpeg"
+            },
+            {
+                "themeId": "bbd8e5f1-beb9-4a2f-a106-90a172d62a91",
+                "displayId": "T013",
+                "title": "NATURE",
+                "subtitle": "wonders",
+                "description": "What is Lorem Ipsum?\nLorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.What is Lorem Ipsum?\nLorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.What is Lorem Ipsum?\nLorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.What is Lorem Ipsum?\nLorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.What is Lorem Ipsum?\nLorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.What is Lorem Ipsum?\nLorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.",
+                "noOfDeck": "1",
+                "coverImageUrl": "https://hotdeckdevacc.blob.core.windows.net/hotdeckdevcontainer/themes/nature.jpeg?sv=2023-11-03&se=2024-08-10T06%3A46%3A51Z&sr=b&sp=r&sig=4hGoQnP%2BmNNHXQHTXiLEBLvYgESLnGNKdopCvll1hPA%3D",
+                "status": 1,
+                "createdAt": "2024-08-05T06:08:11.876Z",
+                "coverImageFileName": "nature.jpeg"
+            },
+            {
+                "themeId": "15ec2112-ba1c-48e9-b9c7-3d0ff21a794e",
+                "displayId": "T012",
+                "title": "Thalapathy Theme",
+                "subtitle": "Ghili Movie",
+                "description": "Vijay is a famous tamil actor",
+                "noOfDeck": "1",
+                "coverImageUrl": "https://hotdeckdevacc.blob.core.windows.net/hotdeckdevcontainer/themes/Hotdeck%201%20(Transparent).jpg?sv=2023-11-03&se=2024-08-10T06%3A46%3A51Z&sr=b&sp=r&sig=WBEE7U02E1WW3Cm%2F9DmoqtgxamAGSsVdF%2BrP4C3hQTs%3D",
+                "status": 1,
+                "createdAt": "2024-08-01T15:46:10.066Z",
+                "coverImageFileName": "Hotdeck 1 (Transparent).jpg"
+            },
+            {
+                "themeId": "538ada15-78ab-4ff2-b498-95d8900904b7",
+                "displayId": "T011",
+                "title": "Spinter theme",
+                "subtitle": "season theme",
+                "description": "It is a good season for enjoy",
+                "noOfDeck": "1",
+                "coverImageUrl": "https://hotdeckdevacc.blob.core.windows.net/hotdeckdevcontainer/themes/sample4.jpg?sv=2023-11-03&se=2024-08-10T06%3A46%3A51Z&sr=b&sp=r&sig=NbPJK26KIwYHNz7EGTlsiq9OPDbPzdoCcqWqhWPozAk%3D",
+                "status": 1,
+                "createdAt": "2024-08-01T15:31:59.611Z",
+                "coverImageFileName": "sample4.jpg"
+            },
+            {
+                "themeId": "9547aeda-8622-4ed5-b4cd-f521b8caf8bf",
+                "displayId": "T010",
+                "title": "Mountain Theme",
+                "subtitle": "Himalaya",
+                "description": "Mountain is the best resource",
+                "noOfDeck": "0",
+                "coverImageUrl": "https://hotdeckdevacc.blob.core.windows.net/hotdeckdevcontainer/themes/679355-large-size-backgrounds-1920x1080-for-tablet.jpg?sv=2023-11-03&se=2024-08-10T06%3A46%3A51Z&sr=b&sp=r&sig=NT7gowfCoAcSI0URQIrDsNVx12Qf30UDpHbdfqsjVLY%3D",
+                "status": 1,
+                "createdAt": "2024-08-01T15:31:19.703Z",
+                "coverImageFileName": "679355-large-size-backgrounds-1920x1080-for-tablet.jpg"
+            },
+            {
+                "themeId": "f864a4a8-3d4b-4c7e-9e1c-1542df6c700a",
+                "displayId": "T009",
+                "title": "Falls Theme",
+                "subtitle": "Nature theme",
+                "description": "Falls is very beautiful",
+                "noOfDeck": "0",
+                "coverImageUrl": "https://hotdeckdevacc.blob.core.windows.net/hotdeckdevcontainer/themes/sample5%20(1)%20(1).jpg?sv=2023-11-03&se=2024-08-10T06%3A46%3A51Z&sr=b&sp=r&sig=qptU%2BBazIAOjEDJzDz1m3LRwvwk07kkqkfZrF3GIcN8%3D",
+                "status": 1,
+                "createdAt": "2024-08-01T15:30:40.055Z",
+                "coverImageFileName": "sample5 (1) (1).jpg"
+            },
+            {
+                "themeId": "f6e8a7fa-3bab-4d02-80cb-843f08c71f39",
+                "displayId": "T008",
+                "title": "Man Theme",
+                "subtitle": "Human theme",
+                "description": "Beard gives manly look",
+                "noOfDeck": "3",
+                "coverImageUrl": "https://hotdeckdevacc.blob.core.windows.net/hotdeckdevcontainer/themes/man%20(1).png?sv=2023-11-03&se=2024-08-10T06%3A46%3A51Z&sr=b&sp=r&sig=txRXOs9dJn4JNlU2lZOF0KL84DGH1km%2Fq5%2BlBFtS6%2Fo%3D",
+                "status": 1,
+                "createdAt": "2024-08-01T15:30:05.135Z",
+                "coverImageFileName": "man (1).png"
+            }
+        ],
+        "page": 1,
+        "size": 10
+    },
+    "message": "Theme Details Found"
+}
