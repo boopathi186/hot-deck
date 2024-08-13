@@ -6,7 +6,6 @@ import { Col, Row, Container, Card, Spinner } from 'react-bootstrap';
 import '../css/DashBoard.css';
 import { useEffect, useState } from "react";
 
-
 const Dashboard = () => {
     const [loading, setLoading] = useState(true);
     useEffect(() => {
@@ -34,7 +33,7 @@ const Dashboard = () => {
                         <Row className=" row-cols-1  row-cols-md-2 row-cols-xl-4 g-4 mt-3">
                             
                             <Col>
-                                <Link className=' text-decoration-none text-white fw-bold' to='/themes'>
+                                <Link className=' text-decoration-none text-white fw-bold' to='/dashboard/themes'>
                                     <Card className="theme h-100 shadow-sm rounded text-center border-0">
                                     <Card.Body className="bg-white text-dark fw-bold  ">
                                         <Row>
@@ -51,7 +50,7 @@ const Dashboard = () => {
                                     </Card></Link>
                             </Col>
                             <Col>
-                            <Link className=' text-decoration-none text-white fw-bold' to='/decks'>
+                            <Link className=' text-decoration-none text-white fw-bold' to='/dashboard/decks'>
                             <Card className="theme h-100 shadow-sm rounded-2 text-center border-0">
                                     <Card.Body className="bg-white text-dark fw-bold  ">
                                         <Row>
@@ -61,14 +60,14 @@ const Dashboard = () => {
                                             </Col>
                                         </Row>
                                         <Row>
-                                        <Col  className=" text-secondary  text-start ms-2 mt-3 fs-2">06</Col>
+                                        <Col  className=" text-secondary  text-start ms-2 mt-3 fs-2">{(sessionStorage.getItem('DeckLength'))}</Col>
                                         <Col  className=" mt-4"></Col>
                                         </Row>
                                         </Card.Body>
                                     </Card></Link>
                             </Col>
                             <Col>
-                            <Link className=' text-decoration-none text-white fw-bold' to='/challenges'>
+                            <Link className=' text-decoration-none text-white fw-bold' to='/dashboard/challenges'>
                             <Card className="theme h-100 shadow-sm rounded-4  text-center border-0">
                                     <Card.Body className="bg-white text-dark fw-bold  ">
                                         <Row>
@@ -77,14 +76,14 @@ const Dashboard = () => {
                                             <i className="bi bi-suit-heart-fill"></i></Col>
                                         </Row>
                                         <Row>
-                                        <Col  className="  text-secondary  text-start ms-2 mt-3 fs-2">03</Col>
+                                        <Col  className="  text-secondary  text-start ms-2 mt-3 fs-2">{(sessionStorage.getItem('challengeLength'))}</Col>
                                         <Col  className=" mt-4"></Col>
                                         </Row>
                                         </Card.Body>
                                     </Card></Link>
                             </Col>
                             <Col>
-                            <Link className=' text-decoration-none text-white fw-bold' to='/customers'>
+                            <Link className=' text-decoration-none text-white fw-bold' to='/dashboard/customers'>
                             <Card className="theme h-100 shadow-sm rounded-2 text-center border-0">
                                     <Card.Body className="bg-white text-dark fw-bold  ">
                                         <Row>
@@ -93,7 +92,7 @@ const Dashboard = () => {
                                             <i className="bi bi-suit-spade-fill"></i></Col>
                                         </Row>
                                         <Row>
-                                        <Col  className=" text-secondary  text-start ms-2 mt-3 fs-2">02</Col>
+                                        <Col  className=" text-secondary  text-start ms-2 mt-3 fs-2">{(sessionStorage.getItem('customerLength'))}</Col>
                                         <Col  className=" mt-4"></Col>
                                         </Row>
                                         </Card.Body>

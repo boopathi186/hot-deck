@@ -8,8 +8,11 @@ import Decks from './pages/Decks';
 import Challenges from './pages/Challenges';
 import Customers from './pages/Customers';
 import Theme from './pages/Themes';
+import Admin from './pages/Admin';
+import Roles from './pages/Roles';
 
 function App() {
+
   return (
     <div className='App'>
        <Router>
@@ -20,11 +23,17 @@ function App() {
             </Route>
           </>
           <Route element={<PrivateRoute/>}>
-            <Route path='/dashboard' element={<Dashboard />} />
+            <Route path='/dashboard' element={<Dashboard/>} />
+            <Route path='/dashboard/themes' element={<Theme />} />
             <Route path='/theme' element={<Theme />} />
             <Route path='/decks' element= {<Decks/>} />
+            <Route path='/dashboard/decks' element= {<Decks/>} />
+            <Route path='/usermanagement' element= {<Admin/>} />
+            <Route path='/roles' element= {<Roles/>} />
             <Route path='/challenges' element= {<Challenges/>} />
+            <Route path='dashboard/challenges' element= {<Challenges/>} />
             <Route path='/customers' element= {<Customers/>} />
+            <Route path='/dashboard/customers' element= {<Customers/>} />
           </Route>
 
         </Routes>

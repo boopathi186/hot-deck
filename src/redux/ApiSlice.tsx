@@ -1,14 +1,13 @@
 import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react';
 
 interface Deck {
+   [x: string]: any;
    data: [];
 }
-
-
 export const getApi = createApi({
   reducerPath: 'getApi',
   baseQuery: fetchBaseQuery({
-    baseUrl: 'https://2b33-103-160-171-236.ngrok-free.app',
+    baseUrl: 'https://bae6-103-160-171-236.ngrok-free.app',
     prepareHeaders: (headers) => {
      const tokens= sessionStorage.getItem('token');
      if(tokens){
@@ -18,6 +17,7 @@ export const getApi = createApi({
     },
   }),
   endpoints: (build) => ({
+    
     getDecks: build.query<Deck, void>({
       query: () => '/api/users/getDecks',
     }),

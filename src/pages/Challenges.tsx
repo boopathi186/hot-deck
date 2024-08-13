@@ -1,13 +1,19 @@
 import React, { useState, useEffect } from 'react';
-import { Button, Col, Row, Spinner, Table } from "react-bootstrap";
+import { Col, Row, Spinner } from "react-bootstrap";
 import '../css/Decks.css';
 import Header from "../components/header/Header";
 import Sidebar from "../components/sidebar/Sidebar";
 import Toggle from '../components/toggle/Toggle';
 import { useGetChallengesQuery } from '../redux/ApiSlice';
 import Paginate from './Paginate';
+import SearchBar from '../pages/Search-Bar';
+import ChallengesTable from '../components/tables/Challenge-Table';
+import CreateButton from '../components/buttons/Create-Challenge';
+import { log } from 'console';
+import Theme from './Themes';
+import Dashboard from './DashBoard';
 
-interface Deck {
+interface Challenge {
   challenge_id: string;
   response_type: number;
   tags: string;
@@ -18,20 +24,15 @@ interface Deck {
 const Challenges: React.FC = () => {
   const [searchTerm, setSearchTerm] = useState<string>('');
   const [currentPage, setCurrentPage] = useState(0);
-  const [filteredData, setFilteredData] = useState<Deck[]>([]);
+  const [filteredData, setFilteredData] = useState<Challenge[]>([]);
   const { data, isLoading } = useGetChallengesQuery();
-
-  const recordsPerPage = 10;
-  const firstIndex = currentPage * recordsPerPage;
-  const lastIndex = firstIndex + recordsPerPage;
-  const records = filteredData.slice(firstIndex, lastIndex);
-  const pageCount = Math.ceil(filteredData.length / recordsPerPage);
-
-
+  
   useEffect(() => {
-    console.log(data)
+    console.log(data);
+    
+    
     if (data) {
-      setFilteredData(data.data);
+      setFilteredData(data);
     }
   }, [data]);
 
@@ -39,18 +40,28 @@ const Challenges: React.FC = () => {
     const value = event.target.value;
     setSearchTerm(value);
     if (data) {
-      const filtered = data.data.filter((product: Deck) =>
-        product.challenge_name.includes(value) ||
-        product.display_id.toString().includes(value) ||
-        product.response_type.toString().includes(value)
+      const filtered = data.filter((challenge: Challenge) =>
+        challenge.challenge_name.includes(value.toLowerCase()) ||
+        challenge.display_id.toString().includes(value.toLowerCase()) ||
+        challenge.response_type.toString().includes(value)
       );
       setFilteredData(filtered);
       setCurrentPage(0);
     }
   };
+
   const handlePageClick = (selectedItem: { selected: number }) => {
     setCurrentPage(selectedItem.selected);
   };
+
+  const recordsPerPage = 10;
+  const firstIndex = currentPage * recordsPerPage;
+  const lastIndex = firstIndex + recordsPerPage;
+  const records = filteredData.slice(firstIndex, lastIndex);
+  const pageCount = Math.ceil(filteredData.length / recordsPerPage);
+  
+  const total: number  = filteredData.length;
+  sessionStorage.setItem('challengeLength', JSON.stringify(total))
   return (
     <div>
       {isLoading ? (
@@ -75,64 +86,12 @@ const Challenges: React.FC = () => {
               </Row>
               <div className='row'>
                 <Col md={6}>
-                  <div className="w-100 p-3 mt-3 position-relative">
-                    <i className="search bi bi-search text-secondary fs-3"></i>
-                    <input
-                      className='searchbar w-100 ps-5 shadow-sm rounded-4 border-0 p-3'
-                      onChange={handleSearch}
-                      type="text"
-                      value={searchTerm}
-                      placeholder="Search for names..."
-                      title="Type in a name"
-                    />
-                  </div>
+                  <SearchBar searchTerm={searchTerm} handleSearch={handleSearch} />
                 </Col>
-                <Col className='d-none d-md-block'>
-
-                  <Button className='createButton border border-none shadow-sm mt-4 fw-semibold rounded-3 py-3' variant='none'>
-                    + Create Challenge
-                  </Button>
-
-                </Col>
+                <CreateButton />
               </div>
-              <div className="t1 table-responsive shadow mt-3">
-                <Table bordered variant='border border-white'>
-                  <thead className='sticky-top shadow-sm text-center'>
-                    <tr>
-                      {['ID', 'Challenges', 'Tags', 'Response Type', 'Action'].map((field) => (
-                        <th key={field} className='text-secondary bg-light bg-opacity-100 rounded border border-white fs-6 p-2'>{field}</th>
-                      ))}
-                    </tr>
-                  </thead>
-                  <tbody>
-                    {records.length > 0 ? (
-                      records.map((product: Deck) => (
-                        <tr className='border-bottom ' key={product.challenge_id}>
-                          <td className='text-center text-secondary'>{product.challenge_id}</td>
-                          <td className='text-center'> {product.challenge_name}</td>
-                          <td className='text-center'> {product.tags} </td>
-                          <td className='text-center'>
-                            {product.response_type === 1? (<i className="bi bi-card-text"></i>): (<i className="bi bi-camera-reels"></i>)}
-                          </td>
-                          <td className='text-center'> <i className="edit bi bi-pencil-fill"></i></td>
-                        </tr>
-                      ))
-                    ) : (
-                      <tr>
-                        <td colSpan={8} className="text-center text-danger"> No matches found </td>
-                      </tr>
-                    )}
-                  </tbody>
-                </Table>
-              </div>
-              <Col className='d-md-none d-block text-center'>
-
-                <Button className='bg-danger border border-none shadow-sm text-white mt-3 rounded-3 py-2 ' variant='none'>
-                  + Create Product
-                </Button>
-
-              </Col>
-              {/* props for pagination */}
+            
+              <ChallengesTable records={records} />
               <div className='mt-3'>
                 <Paginate pageCount={pageCount} handlePageClick={handlePageClick} />
               </div>
@@ -141,6 +100,7 @@ const Challenges: React.FC = () => {
         </Row>
       )}
     </div>
-  )
-}
+  );
+};
+
 export default Challenges;
