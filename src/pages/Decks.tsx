@@ -10,44 +10,29 @@ import { useGetDecksQuery } from '../redux/ApiSlice';
 import Paginate from './Paginate';
 
 interface Deck {
+  data: string[];
   parent_card_count: string;
   cover_image_url: string;
   id: string;
-  items: any;
-  price: number;
-  deckId: string;
   display_id: string;
   title: string;
   subtitle: string;
-  deckType: number;
-  description: string;
   coverImageUrl: string;
   status: number;
-  createdAt: string;
   coverImageFileName: string;
   totalCount: number;
 }
 
-interface DecksResponse {
-  items: Deck[];
-}
 
 const Decks: React.FC = () => {
   const [searchTerm, setSearchTerm] = useState<string>('');
-  const [currentPage, setCurrentPage] = useState(0);
+  const [currentPage, setCurrentPage] = useState<number>(0);
   const [filteredData, setFilteredData] = useState<Deck[]>([]);
-  const { data, isLoading } = useGetDecksQuery();
-
-  const recordsPerPage = 10;
-  const firstIndex = currentPage * recordsPerPage;
-  const lastIndex = firstIndex + recordsPerPage;
-  const records = filteredData.slice(firstIndex, lastIndex);
-  const pageCount = Math.ceil(filteredData.length / recordsPerPage);
+  const { data, error, isLoading } = useGetDecksQuery();
 
   useEffect(() => {
-    console.log(data)
     if (data) {
-      setFilteredData(data);
+      setFilteredData(data.data);
     }
   }, [data]);
 
@@ -55,18 +40,25 @@ const Decks: React.FC = () => {
     const value = event.target.value;
     setSearchTerm(value);
     if (data) {
-      const filtered = data.filter((product: Deck) =>
+      const filtered = data.data.filter((product: Deck) =>
         product.title.includes(value) ||
         product.display_id.toString().includes(value) ||
-        product.price.toString().includes(value)
+        product.subtitle.toString().includes(value)
       );
       setFilteredData(filtered);
       setCurrentPage(0);
     }
   };
+
   const handlePageClick = (selectedItem: { selected: number }) => {
     setCurrentPage(selectedItem.selected);
   };
+
+  const recordsPerPage = 10;
+  const firstIndex = currentPage * recordsPerPage;
+  const lastIndex = firstIndex + recordsPerPage;
+  const records = filteredData.slice(firstIndex, lastIndex);
+  const pageCount = Math.ceil(filteredData.length / recordsPerPage);
   return (
     <div>
       {isLoading ? (
@@ -131,12 +123,12 @@ const Decks: React.FC = () => {
                           <td className='text-center'>{moment().format('LL')} </td>
                           <td className='text-center'>
                             {product.status === 1 ?
-                              (<small className='active  rounded-2 border-none p-1 mx-2 m-2'>Active</small>) : (
+                              (<small className='active  rounded-2 border-none p-1 mx-2 m-2 px-3'>Active</small>) : (
                                 <small className='inactive rounded-2 border-none p-1 mx-2'>Disabled</small>
                               )}
                           </td>
                           <td className='text-center'>
-                            <i className="edit bi bi-pencil-square "></i>
+                          <i className="edit bi bi-pencil-fill"></i>
                           </td>
                         </tr>
                       ))

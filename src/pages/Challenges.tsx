@@ -1,11 +1,9 @@
 import React, { useState, useEffect } from 'react';
-import { Link } from "react-router-dom";
 import { Button, Col, Row, Spinner, Table } from "react-bootstrap";
 import '../css/Decks.css';
 import Header from "../components/header/Header";
 import Sidebar from "../components/sidebar/Sidebar";
 import Toggle from '../components/toggle/Toggle';
-import moment from 'moment';
 import { useGetChallengesQuery } from '../redux/ApiSlice';
 import Paginate from './Paginate';
 
@@ -17,11 +15,6 @@ interface Deck {
   display_id: string;
 
 }
-
-interface DecksResponse {
-  items: Deck[];
-}
-
 const Challenges: React.FC = () => {
   const [searchTerm, setSearchTerm] = useState<string>('');
   const [currentPage, setCurrentPage] = useState(0);
@@ -38,7 +31,7 @@ const Challenges: React.FC = () => {
   useEffect(() => {
     console.log(data)
     if (data) {
-      setFilteredData(data);
+      setFilteredData(data.data);
     }
   }, [data]);
 
@@ -46,7 +39,7 @@ const Challenges: React.FC = () => {
     const value = event.target.value;
     setSearchTerm(value);
     if (data) {
-      const filtered = data.filter((product: Deck) =>
+      const filtered = data.data.filter((product: Deck) =>
         product.challenge_name.includes(value) ||
         product.display_id.toString().includes(value) ||
         product.response_type.toString().includes(value)
@@ -106,7 +99,7 @@ const Challenges: React.FC = () => {
                 <Table bordered variant='border border-white'>
                   <thead className='sticky-top shadow-sm text-center'>
                     <tr>
-                      {['ID', 'phone Number', 'No_Of_Decks', 'Responswe Type', 'Action'].map((field) => (
+                      {['ID', 'Challenges', 'Tags', 'Response Type', 'Action'].map((field) => (
                         <th key={field} className='text-secondary bg-light bg-opacity-100 rounded border border-white fs-6 p-2'>{field}</th>
                       ))}
                     </tr>
@@ -116,25 +109,17 @@ const Challenges: React.FC = () => {
                       records.map((product: Deck) => (
                         <tr className='border-bottom ' key={product.challenge_id}>
                           <td className='text-center text-secondary'>{product.challenge_id}</td>
+                          <td className='text-center'> {product.challenge_name}</td>
+                          <td className='text-center'> {product.tags} </td>
                           <td className='text-center'>
-                            {product.challenge_name}
+                            {product.response_type === 1? (<i className="bi bi-card-text"></i>): (<i className="bi bi-camera-reels"></i>)}
                           </td>
-                          <td className='text-center'>
-                            {product.tags}
-                          </td>
-                          <td className='text-center'>
-                            {product.response_type}
-                          </td>
-                          <td className='text-center'>
-                            <i className="edit bi bi-pencil-square "></i>
-                          </td>
+                          <td className='text-center'> <i className="edit bi bi-pencil-fill"></i></td>
                         </tr>
                       ))
                     ) : (
                       <tr>
-                        <td colSpan={8} className="text-center text-danger">
-                          No matches found
-                        </td>
+                        <td colSpan={8} className="text-center text-danger"> No matches found </td>
                       </tr>
                     )}
                   </tbody>

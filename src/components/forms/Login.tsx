@@ -106,7 +106,7 @@ const Login: React.FC = () => {
                                     </Col>
                                     {formFields.map((field, index) => (
                                         <div key={index} className="mb-3 position-relative">
-                                            <label className="text-secondary mb-2 fw-semibold" htmlFor={field.name}>{field.label}:</label>
+                                            <label className="text-secondary mb-2 fw-semibold w-100 text-start" htmlFor={field.name}>{field.label}:</label>
                                             <Field
                                                 className="input form-control fw-semibold bg-secondary bg-opacity-10 border border-0 shadow-sm p-3"
                                                 type={field.type}

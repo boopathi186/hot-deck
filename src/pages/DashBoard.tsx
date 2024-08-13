@@ -34,7 +34,7 @@ const Dashboard = () => {
                         <Row className=" row-cols-1  row-cols-md-2 row-cols-xl-4 g-4 mt-3">
                             
                             <Col>
-                                <Link className=' text-decoration-none text-white fw-bold' to='/dashboard/themes'>
+                                <Link className=' text-decoration-none text-white fw-bold' to='/themes'>
                                     <Card className="theme h-100 shadow-sm rounded text-center border-0">
                                     <Card.Body className="bg-white text-dark fw-bold  ">
                                         <Row>
@@ -51,6 +51,7 @@ const Dashboard = () => {
                                     </Card></Link>
                             </Col>
                             <Col>
+                            <Link className=' text-decoration-none text-white fw-bold' to='/decks'>
                             <Card className="theme h-100 shadow-sm rounded-2 text-center border-0">
                                     <Card.Body className="bg-white text-dark fw-bold  ">
                                         <Row>
@@ -64,9 +65,10 @@ const Dashboard = () => {
                                         <Col  className=" mt-4"></Col>
                                         </Row>
                                         </Card.Body>
-                                    </Card>
+                                    </Card></Link>
                             </Col>
                             <Col>
+                            <Link className=' text-decoration-none text-white fw-bold' to='/challenges'>
                             <Card className="theme h-100 shadow-sm rounded-4  text-center border-0">
                                     <Card.Body className="bg-white text-dark fw-bold  ">
                                         <Row>
@@ -79,9 +81,10 @@ const Dashboard = () => {
                                         <Col  className=" mt-4"></Col>
                                         </Row>
                                         </Card.Body>
-                                    </Card>
+                                    </Card></Link>
                             </Col>
                             <Col>
+                            <Link className=' text-decoration-none text-white fw-bold' to='/customers'>
                             <Card className="theme h-100 shadow-sm rounded-2 text-center border-0">
                                     <Card.Body className="bg-white text-dark fw-bold  ">
                                         <Row>
@@ -94,7 +97,7 @@ const Dashboard = () => {
                                         <Col  className=" mt-4"></Col>
                                         </Row>
                                         </Card.Body>
-                                    </Card>
+                                    </Card></Link>
                             </Col>
                         </Row>
                        

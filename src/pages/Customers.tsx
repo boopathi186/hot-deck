@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
-import { Link } from "react-router-dom";
 import { Button, Col, Row, Spinner, Table } from "react-bootstrap";
-import '../css/Decks.css';
+import '../css/Customer.css';
 import Header from "../components/header/Header";
 import Sidebar from "../components/sidebar/Sidebar";
 import Toggle from '../components/toggle/Toggle';
@@ -16,13 +15,8 @@ interface Deck {
     no_of_decks: number;
     lastlogin: string;
     id: string;
-    items: any;
     title: string;
   }
-
-interface DecksResponse {
-  items: Deck[];
-}
 
 const Customers: React.FC = () => {
   const [searchTerm, setSearchTerm] = useState<string>('');
@@ -40,7 +34,7 @@ const Customers: React.FC = () => {
   useEffect(() => {
     console.log(data)
      if (data) {
-       setFilteredData(data);
+       setFilteredData(data.data);
      } 
    }, [data]);
 
@@ -48,7 +42,7 @@ const Customers: React.FC = () => {
     const value = event.target.value;
     setSearchTerm(value);
     if (data) {
-      const filtered = data.filter((product: Deck) =>
+      const filtered = data.data.filter((product: Deck) =>
         product.phone_number.includes(value) ||
         product.id.toString().includes(value) ||
         product.no_of_decks.toString().includes(value)
@@ -116,16 +110,19 @@ const Customers: React.FC = () => {
                   </thead>
                   <tbody>
                     {records.length > 0 ? (
-                      records.map((product: Deck) => (
+                      records.map((product: Deck,index) => (
                         <tr className='border-bottom ' key={product.id}>
-                          <td className='text-center text-secondary'>{product.id}</td>
+                          <td className='text-center text-secondary'>{firstIndex+0+index}</td>
                           <td className='text-center'>{product.phone_number }</td>
                            <td className='text-center'>{product.no_of_decks}</td>
-                         <td className='text-center'>  {product.referral} </td>
-                          <td className='text-center'>    {product.lastlogin}</td>
+                         <td className=' text-center'>
+                         { product.referral?           
+                           (<small className='refferal px-2 fw-semibold rounded py-1'> {product.referral} </small>):
+                           (<small className='refferal px-4 fw-semibold rounded py-1'>No Refferal</small>)}</td>
+                          <td className='text-center'>    {moment().add(10, 'days').calendar()}</td>
                           <td className='text-center'>              
                             {product.status===1?
-                            (<small className='active  rounded-2 border-none p-1 mx-2 m-2'>Active</small>) : (
+                            (<small className='active  rounded-2 border-none p-1 px-3 mx-2 m-2'>Active</small>) : (
                                 <small className='inactive rounded-2 border-none p-1 mx-2'>Disabled</small>
                               )}
                           </td>   

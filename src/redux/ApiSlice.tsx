@@ -1,29 +1,9 @@
 import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react';
 
 interface Deck {
-  items: any[];
-  price: number;
-  filter: [];
-  deckId: string;
-  data: [];
-  id: string;
-  title: string;
-  subtitle: string;
-  deckType: number;
-  description: string;
-  coverImageUrl: string;
-  playableCardCount: number;
-  supportCardCount: number;
-  totalCardCount: number;
-  status: number;
-  createdAt: string;
-  coverImageFileName: string;
-  totalCount: number;
+   data: [];
 }
 
-interface DecksResponse {
-  items: Deck[];
-}
 
 export const getApi = createApi({
   reducerPath: 'getApi',
