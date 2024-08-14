@@ -78,7 +78,7 @@ const Customers: React.FC = () => {
             </div>
             <div className="text-end container-fluid">
               <Row className="d-flex m-0 p-0">
-                <Col md={6} sm={12} className="fw-semibold fs-4 text-md-start text-center">Decks</Col>
+                <Col md={6} sm={12} className="fw-semibold fs-4 text-md-start text-center">Customers</Col>
               </Row>
               <div className='row'>
                 <Col md={6}>

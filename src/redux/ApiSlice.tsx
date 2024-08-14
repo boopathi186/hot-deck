@@ -1,13 +1,48 @@
 import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react';
+interface Credentials {
+  email: string;
+  password: string;
+}
+
+interface LoginResponse {
+  accessToken: string;
+}
 
 interface Deck {
-   [x: string]: any;
-   data: [];
+  data: string[];
+  parent_card_count: string;
+  cover_image_url: string;
+  id: string;
+  display_id: string;
+  title: string;
+  subtitle: string;
+  coverImageUrl: string;
+  status: number;
+  coverImageFileName: string;
+  totalCount: number;
+}
+interface CustomerData {
+  status: number;
+  referral: string;
+  phone_number: string;
+  no_of_decks: number;
+  lastlogin: string;
+  id: string;
+  title: string;
+}
+
+interface Challenge {
+  challenge_id: string; 
+  response_type: number;
+  tags: string;
+  challenge_name: string;
+  display_id: string;
+  status: number;
 }
 export const getApi = createApi({
   reducerPath: 'getApi',
   baseQuery: fetchBaseQuery({
-    baseUrl: 'https://bae6-103-160-171-236.ngrok-free.app',
+    baseUrl: 'https://9ab1-103-160-171-236.ngrok-free.app',
     prepareHeaders: (headers) => {
      const tokens= sessionStorage.getItem('token');
      if(tokens){
@@ -17,17 +52,23 @@ export const getApi = createApi({
     },
   }),
   endpoints: (build) => ({
-    
-    getDecks: build.query<Deck, void>({
+    login: build.mutation<LoginResponse, Credentials>({
+      query: (credential) => ({
+        url: '/api/users/login',
+        method: 'POST',
+        body: credential,
+      }),
+    }),
+    getDecks: build.query<Deck[], void>({
       query: () => '/api/users/getDecks',
     }),
-    getChallenges: build.query<Deck, void>({
+    getChallenges: build.query<Challenge[], void>({
       query: () => '/api/users/getChallenge',
     }),
-    getCustomer: build.query<Deck, void>({
+    getCustomer: build.query<CustomerData[], void>({
       query: () => '/api/users/getCustomer',
     }),
   }),
 });
 
-export const { useGetDecksQuery, useGetChallengesQuery, useGetCustomerQuery} = getApi;
+export const { useGetDecksQuery, useGetChallengesQuery, useGetCustomerQuery,useLoginMutation} = getApi;

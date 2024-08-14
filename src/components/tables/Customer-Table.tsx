@@ -41,7 +41,7 @@ const DeckTable: React.FC<DeckTableProps> = ({ records, firstIndex }) => {
                     (<small className='refferal px-4 fw-semibold rounded py-1'>No Referral</small>)
                   }
                 </td>
-                <td className='text-center'>{moment().add(10, 'days').calendar()}</td>
+                <td className='text-center'>{moment().format('LL')}</td>
                 <td className='text-center'>
                   {product.status === 1 ?
                     (<small className='active rounded-2 border-none p-1 px-3 mx-2 m-2'>Active</small>) :

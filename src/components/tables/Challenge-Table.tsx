@@ -1,8 +1,8 @@
 import React from 'react';
 import { Table } from "react-bootstrap";
-import moment from 'moment';
 
 interface Challenge {
+  status: number;
   challenge_id: string;
   response_type: number;
   tags: string;
@@ -20,7 +20,7 @@ const ChallengesTable: React.FC<ChallengesTableProps> = ({ records }) => {
       <Table bordered variant='border border-white'>
         <thead className='sticky-top shadow-sm text-center'>
           <tr>
-            {['ID', 'Challenges', 'Tags', 'Response Type', 'Action'].map((field) => (
+            {['ID', 'Challenges', 'Tags', 'Response Type','Status', 'Action'].map((field) => (
               <th key={field} className='text-secondary bg-light bg-opacity-100 rounded border border-white fs-6 p-2'>{field}</th>
             ))}
           </tr>
@@ -44,6 +44,13 @@ const ChallengesTable: React.FC<ChallengesTableProps> = ({ records }) => {
                       <i className="text-secondary text-opacity-50 bi bi-camera-reels m-1"></i>
                       <i className="m-1 text-secondary text-opacity-50 bi bi-card-image"></i>
                     </>
+                  )}
+                </td>
+                <td className='text-center'>
+                  {datas.status === 1 ? (
+                    <small className='active rounded-2 border-none p-1 mx-2 m-2 px-3'>Active</small>
+                  ) : (
+                    <small className='inactive rounded-2 border-none p-1 mx-2'>Disabled</small>
                   )}
                 </td>
                 <td className='text-center'>

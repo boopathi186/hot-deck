@@ -7,10 +7,11 @@ body
     background-color: rgb(250, 252, 251) !important;
 }
 .card  {
-   
     min-height: 150px; 
+    border-radius: 50%;
 }
-.theme :hover, .decks :hover , .challenges :hover , .customers :hover , .userprofile :hover {
-    transition: 0.1s ease-in-out;
-    font-size: x-large;
-}
+.hover-card:hover {
+    transform: translateY(5px);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease-in-out;
+  }

@@ -26,7 +26,7 @@ const Header = () => {
                     toast.onmouseenter = Swal.stopTimer;
                     toast.onmouseleave = Swal.resumeTimer;
                 }
-            });},3000);
+            });},1000);
         navigate('/');
        
     } 

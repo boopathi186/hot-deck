@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
-import { Col, Row, Spinner } from "react-bootstrap";
-import '../css/Decks.css';
+import { Col, Nav, Row, Spinner, Tab } from "react-bootstrap";
+import '../css/Challenges.css';
 import Header from "../components/header/Header";
 import Sidebar from "../components/sidebar/Sidebar";
 import Toggle from '../components/toggle/Toggle';
@@ -9,9 +9,8 @@ import Paginate from './Paginate';
 import SearchBar from '../pages/Search-Bar';
 import ChallengesTable from '../components/tables/Challenge-Table';
 import CreateButton from '../components/buttons/Create-Challenge';
-import { log } from 'console';
-import Theme from './Themes';
-import Dashboard from './DashBoard';
+
+
 
 interface Challenge {
   challenge_id: string;
@@ -19,18 +18,18 @@ interface Challenge {
   tags: string;
   challenge_name: string;
   display_id: string;
-
+  status: number;
 }
 const Challenges: React.FC = () => {
   const [searchTerm, setSearchTerm] = useState<string>('');
   const [currentPage, setCurrentPage] = useState(0);
   const [filteredData, setFilteredData] = useState<Challenge[]>([]);
   const { data, isLoading } = useGetChallengesQuery();
-  
+
   useEffect(() => {
     console.log(data);
-    
-    
+
+
     if (data) {
       setFilteredData(data);
     }
@@ -59,8 +58,8 @@ const Challenges: React.FC = () => {
   const lastIndex = firstIndex + recordsPerPage;
   const records = filteredData.slice(firstIndex, lastIndex);
   const pageCount = Math.ceil(filteredData.length / recordsPerPage);
-  
-  const total: number  = filteredData.length;
+
+  const total: number = filteredData.length;
   sessionStorage.setItem('challengeLength', JSON.stringify(total))
   return (
     <div>
@@ -80,17 +79,34 @@ const Challenges: React.FC = () => {
             <div className='d-lg-none d-block shadow'>
               <Toggle />
             </div>
+
             <div className="text-end container-fluid">
               <Row className="d-flex m-0 p-0">
-                <Col md={6} sm={12} className="fw-semibold fs-4 text-md-start text-center">Decks</Col>
+                <Col md={6} sm={12} className="fw-semibold fs-4 text-md-start text-center">Challenges</Col>
               </Row>
-              <div className='row'>
+              <Row className='m-0 p-0 mt-3'>
+                <Tab.Container defaultActiveKey="playable">
+                  <Nav  variant="tabs">
+                    <Nav.Item className='bg-light'>
+                      <Nav.Link eventKey="playable" className="custom-tab bg-light border-light ">
+                        Playable Card Challenges
+                      </Nav.Link>
+                    </Nav.Item>
+                    <Nav.Item  className='bg-light'>
+                      <Nav.Link eventKey="support" className="custom-tab bg-light border-light">
+                        Support Card Challenges
+                      </Nav.Link>
+                    </Nav.Item>
+                  </Nav>
+                </Tab.Container>
+              </Row>
+              <div className='row '>
                 <Col md={6}>
                   <SearchBar searchTerm={searchTerm} handleSearch={handleSearch} />
                 </Col>
                 <CreateButton />
               </div>
-            
+
               <ChallengesTable records={records} />
               <div className='mt-3'>
                 <Paginate pageCount={pageCount} handlePageClick={handlePageClick} />

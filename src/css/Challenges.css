@@ -1,0 +1,9 @@
+.custom-tab {
+    border-bottom: 2px solid transparent;
+  }
+  
+  .custom-tab.active {
+    border-bottom: 2px solid red !important;
+    
+  }
+  

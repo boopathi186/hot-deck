@@ -6,8 +6,12 @@ div.sidebar :hover
 .nav-link {
     color: rgba(108, 117, 125, 0.5); 
   }
-
+  .nav-link:hover {
+    text-decoration: none;
+    color: inherit; 
+    font-size: 15px;
+  }
 .nav-link.active {
     color: #dc3545; 
   }
-  
+      
